@@ -16,11 +16,23 @@
         >web+amp (mp3 player)</a
       >
     </p>
-    
+
     <p>
-        <a href="web+pay://city:CHq57DhZpeVzZTxSJJTpnpMU68Ec8MGfiB?amount=1&label=2&message=3&data=5&id=4">web+pay (Blockcore Wallet)</a>
+      <a
+        href="web+pay://city:CHq57DhZpeVzZTxSJJTpnpMU68Ec8MGfiB?amount=1&label=2&message=3&data=5&id=4"
+        >web+pay (Blockcore Wallet)</a
+      >
     </p>
 
+    <button id="register">Register Protocol</button>
 
+    <script>
+      document.getElementById("register").addEventListener("click", () => {
+        navigator.registerProtocolHandler(
+          "web+pay",
+          "https://wallet.blockcore.net/index.html?pay=%s"
+        );
+      });
+    </script>
   </body>
 </html>
